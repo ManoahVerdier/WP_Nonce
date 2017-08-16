@@ -65,7 +65,7 @@ WP_Nonce::setLifetime(/*new lifetime*/);
 
 ## Author
 
-* **Manoah Verdier** - *Initial work* (https://github.com/ManoahVerdier)
+* **Manoah Verdier** (https://github.com/ManoahVerdier)
 
 
 ## License
