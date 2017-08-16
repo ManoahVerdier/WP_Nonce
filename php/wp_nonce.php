@@ -204,7 +204,7 @@ class WP_Nonce{
     *
     * @return string
     */
-  public static function checkNonce($url,$name,$action=-1){
+  public static function checkNonceURL($url,$name,$action=-1){
     $url_content = parse_url($url);
     if($url_content != ""){
      parse_str($url_content,$url_param);
