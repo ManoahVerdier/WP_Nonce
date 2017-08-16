@@ -195,6 +195,27 @@ class WP_Nonce{
   public static function checkNonce($nonce,$action=-1){
     return wp_verify_nonce($nonce,$action); 
   }
+ 
+  /**
+    * Static function checking a nonce url given the url and the nonce name
+    *
+    * @param string  $url  required
+    * @param string  $name optional
+    *
+    * @return string
+    */
+  public static function checkNonce($url,$name,$action=-1){
+    $url_content = parse_url($url);
+    if($url_content != ""){
+     parse_str($url_content,$url_param);
+    }
+    
+    if(sizeof($url_param)>0 && $url_param[$name]!=""){
+     return wp_verify_nonce($url_param[$name],$action); 
+    }
+   
+    return false
+  }
   
   /* STATIC CONFIG METHODS */
   
